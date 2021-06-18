@@ -28,6 +28,11 @@ def generator():
             generated_pass += chr(randint(33,126))
         
         password_entry.insert(0, generated_pass)
+        
+        if pw_len <= 0:
+            message_label.grid_forget()
+            message_label = Label(button_frame, text = "Password Length can't be 0 or Negative", font =("Helvetica", 15), fg = "red")
+            message_label.grid(row = 0, column = 0, columnspan =3, pady = 3)
             
     except ValueError:
         message_label.grid_forget()
