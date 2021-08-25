@@ -33,6 +33,11 @@ def generator():
             message_label.grid_forget()
             message_label = Label(button_frame, text = "Password Length can't be 0 or Negative", font =("Helvetica", 15), fg = "red")
             message_label.grid(row = 0, column = 0, columnspan =3, pady = 3)
+        
+        elif pw_len < 8:
+            message_label.grid_forget()
+            message_label = Label(button_frame, text = "Password length should not be Less than 8 characters", font =("Helvetica", 15), fg = "red")
+            message_label.grid(row = 0, column = 0, columnspan =3, pady = 3)
             
     except ValueError:
         message_label.grid_forget()
